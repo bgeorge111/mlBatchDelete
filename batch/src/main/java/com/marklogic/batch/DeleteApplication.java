@@ -8,6 +8,7 @@ public class DeleteApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DeleteApplication.class, args);
+		
 	}
 
 }
