@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.marklogic</groupId>
-	<artifactId>batch</artifactId>
+	<artifactId>mlbatch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>delete</name>
-	<description>Demo Project for Scheduled Batch Delete from MarkLogic</description>
+	<name>mlBatch</name>
+	<description>Scheduled Batch Jobs with MarkLogic</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -23,7 +24,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.marklogic</groupId>
+			<artifactId>marklogic-client-api</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.burgstaller/okhttp-digest -->
+		<dependency>
+			<groupId>com.burgstaller</groupId>
+			<artifactId>okhttp-digest</artifactId>
+			<version>1.16</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -45,5 +65,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com/</url>
+		</repository>
+	</repositories>
 
 </project>
