@@ -1,5 +1,7 @@
 package com.marklogic.batch.result;
 
+import java.util.Date;
+
 public class ResultObject {
 
 	String batchResultUri ; 
@@ -12,6 +14,10 @@ public class ResultObject {
 	String batchJobStartTs;
 	String batchJobEndTs;
 	String query;
+	String result;
+	String message;
+	String runTs;
+	String runBy;
 	public String getBatchResultUri() {
 		return batchResultUri;
 	}
@@ -72,7 +78,29 @@ public class ResultObject {
 	public void setQuery(String query) {
 		this.query = query;
 	}
-	
-
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public String getRunTs() {
+		return runTs;
+	}
+	public void setRunTs(String runTs) {
+		this.runTs = runTs;
+	}
+	public String getRunBy() {
+		return runBy;
+	}
+	public void setRunBy(String runBy) {
+		this.runBy = runBy;
+	}
 	
 }

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<options
+    xmlns="http://marklogic.com/appservices/search">
+    <search-option>filtered</search-option>
+    <page-length>10</page-length>
+    <!-- Limit all searches to this additional query -->
+    <additional-query>
+        <cts:collection-query
+            xmlns:cts="http://marklogic.com/cts">
+            <cts:uri>result1</cts:uri>
+            <cts:uri>result2</cts:uri>
+        </cts:collection-query>
+    </additional-query>
+    <!-- Full-text search options -->
+    <term apply="term">
+        <empty apply="all-results"/>
+        <!--
+      Below some example options for full-text searches. Note that MarkLogic will
+      toggle options automatically depending on caps, wildcards etc.
+      See Usage Notes of http://docs.marklogic.com/cts:word-query for details.
+      Also note that forcing stemmed searches will disable wildcarded searches.
+    -->
+        <!--
+    <term-option>punctuation-insensitive</term-option><term-option>stemmed</term-option>
+    -->
+    </term>
+    <!-- Default grammer -->
+    <grammar>
+        <quotation>"</quotation>
+        <implicit>
+            <cts:and-query strength="20"
+                xmlns:cts="http://marklogic.com/cts"/>
+            </implicit>
+            <starter strength="30" apply="grouping" delimiter=")">(</starter>
+            <starter strength="40" apply="prefix" element="cts:not-query">-</starter>
+            <joiner strength="10" apply="infix" element="cts:or-query" tokenize="word">OR</joiner>
+            <joiner strength="20" apply="infix" element="cts:and-query" tokenize="word">AND</joiner>
+            <joiner strength="30" apply="infix" element="cts:near-query" tokenize="word">NEAR</joiner>
+            <joiner strength="30" apply="near2" consume="2" element="cts:near-query">NEAR/</joiner>
+            <joiner strength="50" apply="constraint">:</joiner>
+            <joiner strength="50" apply="constraint" compare="LT" tokenize="word">LT</joiner>
+            <joiner strength="50" apply="constraint" compare="LE" tokenize="word">LE</joiner>
+            <joiner strength="50" apply="constraint" compare="GT" tokenize="word">GT</joiner>
+            <joiner strength="50" apply="constraint" compare="GE" tokenize="word">GE</joiner>
+            <joiner strength="50" apply="constraint" compare="NE" tokenize="word">NE</joiner>
+        </grammar>
+        <!-- Default sort order. You can also associate states with sort orders to allow switching sort orders -->
+        <sort-order type="xs:dateTime" direction="descending">
+            <path-index>//batchJobtartTs</path-index>
+            <score/>
+        </sort-order>
+        <!-- Not used, but the default snippeting behavior if no state (see compact/detailed below) was specified -->
+        <transform-results apply="snippet">
+            <preferred-elements>
+                <element ns="" name="body"/>
+            </preferred-elements>
+            <max-matches>1</max-matches>
+            <max-snippet-chars>150</max-snippet-chars>
+            <per-match-tokens>20</per-match-tokens>
+        </transform-results>
+        <return-query>1</return-query>
+        <!-- This controls the snippet size toggle -->
+        <operator name="results">
+            <state name="compact">
+                <transform-results apply="snippet">
+                    <preferred-elements>
+                        <element ns="" name="body"/>
+                    </preferred-elements>
+                    <max-matches>1</max-matches>
+                    <max-snippet-chars>150</max-snippet-chars>
+                    <per-match-tokens>20</per-match-tokens>
+                </transform-results>
+            </state>
+            <state name="detailed">
+                <transform-results apply="snippet">
+                    <preferred-elements>
+                        <element ns="" name="body"/>
+                    </preferred-elements>
+                    <max-matches>2</max-matches>
+                    <max-snippet-chars>400</max-snippet-chars>
+                    <per-match-tokens>30</per-match-tokens>
+                </transform-results>
+            </state>
+        </operator>
+        <!-- Annotations (allowed pretty much anywhere) allow adding text or elements to feed custom components with options that would normally not validate) -->
+        <annotation>Delta options here</annotation>
+        <!-- Facet based on document collections, simple yet elegant -->
+        <constraint name="Collection">
+            <collection facet="true"/>
+            <!-- optionally enable a prefix to see a specific subset of facets
+    <collection facet="true" prefix="data/" />
+    -->
+        </constraint>
+        <constraint name="JobType">
+            <range type="xs:string" facet="true">
+                <facet-option>limit=5</facet-option>
+                <facet-option>frequency-order</facet-option>
+                <facet-option>descending</facet-option>
+                <path-index>//batchJobType</path-index>
+            </range>
+        </constraint>
+        <constraint name="JobResult">
+            <range type="xs:string" facet="true">
+                <facet-option>limit=5</facet-option>
+                <facet-option>frequency-order</facet-option>
+                <facet-option>descending</facet-option>
+                <path-index>//result</path-index>
+            </range>
+        </constraint>
+        <constraint name="JobName">
+            <range type="xs:string" facet="true">
+                <facet-option>limit=5</facet-option>
+                <facet-option>frequency-order</facet-option>
+                <facet-option>descending</facet-option>
+                <path-index>//batchJobName</path-index>
+            </range>
+        </constraint>
+        <constraint name="RunDate">
+            <range type="xs:dateTime">
+                <path-index>//runTs</path-index>
+                <computed-bucket name="today" ge="P0D" lt="P1D" anchor="start-of-day">Today</computed-bucket>
+                <computed-bucket name="yesterday" ge="-P1D" lt="P0D" anchor="start-of-day">yesterday</computed-bucket>
+                <computed-bucket name="30-days" ge="-P30D" lt="P0D" anchor="start-of-day">Last 30 days</computed-bucket>
+                <computed-bucket name="60-days" ge="-P60D" lt="P0D" anchor="start-of-day">Last 60 Days</computed-bucket>
+                <computed-bucket name="90-days" ge="-P90D" lt="P0D" anchor="start-of-day">Last 90 Days</computed-bucket>
+                <computed-bucket name="year" ge="-P1Y" lt="P1D" anchor="now">Last Year</computed-bucket>
+                <computed-bucket name="year" ge="-P2Y" lt="P1D" anchor="now">Last 2 Years</computed-bucket>
+                <computed-bucket name="year" ge="-P3Y" lt="P1D" anchor="now">Last 3 Years</computed-bucket>
+                <computed-bucket name="year" ge="-P4Y" lt="P1D" anchor="now">Last 4 Years</computed-bucket>
+                <computed-bucket name="year" ge="-P5Y" lt="P1D" anchor="now">Last 5 Years</computed-bucket>
+            </range>
+        </constraint>
+        <extract-document-data selected="include">
+            <extract-path>/batchJobId</extract-path>
+            <extract-path>/batchJobName</extract-path>
+            <extract-path>/batchJobStartTs</extract-path>
+            <extract-path>/batchJobEndTs</extract-path>
+            <extract-path>/runTs</extract-path>
+        </extract-document-data>
+    </options>

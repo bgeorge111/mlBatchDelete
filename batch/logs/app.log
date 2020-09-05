@@ -1,0 +1,975 @@
+2020-09-05 00:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 00:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Result Config
+2020-09-05 00:30:00,036 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 00:30:00,037 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Config
+2020-09-05 00:30:03,356 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15992838026597899 that doesn't match if-match: 15992802036498919
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 00:30:03,379 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15992838026595145 that doesn't match if-match: 15992802036608404
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 00:45:00,017 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Result Config
+2020-09-05 00:45:00,019 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Config
+2020-09-05 00:45:03,196 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15992847025058391 that doesn't match if-match: 15992811025953506
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 01:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Result Config
+2020-09-05 01:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Config
+2020-09-05 01:30:00,019 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Result Config
+2020-09-05 01:30:00,020 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Config
+2020-09-05 01:30:02,590 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 01:30:02,619 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 01:30:02,625 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[1], "options":["lang=en"]}}]}}
+2020-09-05 01:30:03,240 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15992874025899290 that doesn't match if-match: 15992838227317498
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 01:30:03,846 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Job id-->e3996608-68d4-4284-92e7-77931d9b60c7AMQP Export Data Movement Job Started
+2020-09-05 01:30:12,833 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 01:30:12,858 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] AMQP Export Data Movement Job --> e3996608-68d4-4284-92e7-77931d9b60c7 Ended in 12 seconds
+2020-09-05 01:30:12,859 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Job id-->e3996608-68d4-4284-92e7-77931d9b60c7. AMQP Export Data Movement Job Failed Batch Count:265121
+2020-09-05 01:45:00,018 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Result Config
+2020-09-05 01:45:00,024 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Config
+2020-09-05 01:45:03,120 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15992883024955430 that doesn't match if-match: 15992847055457210
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 02:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-4] Reloading File Result Config
+2020-09-05 02:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Result Config
+2020-09-05 02:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Config
+2020-09-05 02:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-4] Reloading File Config
+2020-09-05 02:30:04,499 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15992910035845999 that doesn't match if-match: 15992874128704713
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 02:30:04,500 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15992910035849881 that doesn't match if-match: 15992874128329965
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 02:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Result Config
+2020-09-05 02:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Config
+2020-09-05 02:45:03,360 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15992919026323102 that doesn't match if-match: 15992883057759851
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 03:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 03:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Result Config
+2020-09-05 03:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 03:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Config
+2020-09-05 03:30:03,986 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 03:30:04,027 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 03:30:04,036 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[3], "options":["lang=en"]}}]}}
+2020-09-05 03:30:04,960 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15992946039863943 that doesn't match if-match: 15992910184534847
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 03:30:05,532 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Job id-->0fdfa3d6-ee95-47f4-81fa-89b5cadf2ffdAMQP Export Data Movement Job Started
+2020-09-05 03:30:20,279 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 03:30:20,326 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] AMQP Export Data Movement Job --> 0fdfa3d6-ee95-47f4-81fa-89b5cadf2ffd Ended in 20 seconds
+2020-09-05 03:30:20,327 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Job id-->0fdfa3d6-ee95-47f4-81fa-89b5cadf2ffd. AMQP Export Data Movement Job Failed Batch Count:307447
+2020-09-05 03:45:00,017 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Result Config
+2020-09-05 03:45:00,018 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Config
+2020-09-05 03:45:02,979 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15992955024109917 that doesn't match if-match: 15992919060045111
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 04:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Result Config
+2020-09-05 04:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Config
+2020-09-05 04:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Result Config
+2020-09-05 04:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Config
+2020-09-05 04:30:02,354 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 04:30:02,384 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 04:30:02,391 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[4], "options":["lang=en"]}}]}}
+2020-09-05 04:30:02,933 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15992982023544897 that doesn't match if-match: 15992946202777393
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 04:30:03,479 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Job id-->0f21aea1-dd41-48f7-87e8-cb729c8dc5dbAMQP Export Data Movement Job Started
+2020-09-05 04:30:11,065 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 04:30:11,095 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] AMQP Export Data Movement Job --> 0f21aea1-dd41-48f7-87e8-cb729c8dc5db Ended in 10 seconds
+2020-09-05 04:30:11,095 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Job id-->0f21aea1-dd41-48f7-87e8-cb729c8dc5db. AMQP Export Data Movement Job Failed Batch Count:349071
+2020-09-05 04:45:00,017 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Result Config
+2020-09-05 04:45:00,017 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Config
+2020-09-05 04:45:02,357 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-1] Lock Service:: Document /batch/locks/delete.json updated to locked status.
+2020-09-05 04:45:02,380 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Batch Delete Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 04:45:02,389 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[4], "options":["lang=en"]}}]}}
+2020-09-05 04:45:03,812 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Job id-->20fa4dab-bae8-4fc5-a976-5cb9908b4b26Delete Data Movement Job Started
+2020-09-05 04:45:05,175 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-1] UnLock Service:: Document /batch/locks/delete.json updated to Available status.
+2020-09-05 04:45:05,195 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Delete Data Movement Job --> 20fa4dab-bae8-4fc5-a976-5cb9908b4b26 Ended in 5 seconds
+2020-09-05 04:45:05,195 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Job id-->20fa4dab-bae8-4fc5-a976-5cb9908b4b26. Delete Data Movement Job Failed Batch Count:0
+2020-09-05 05:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Result Config
+2020-09-05 05:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Reloading File Result Config
+2020-09-05 05:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Reloading File Config
+2020-09-05 05:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Config
+2020-09-05 05:30:04,300 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993018033144252 that doesn't match if-match: 15992982110655186
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 05:30:04,302 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993018033144238 that doesn't match if-match: 15992982110578314
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 05:45:00,014 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Result Config
+2020-09-05 05:45:00,015 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Config
+2020-09-05 05:45:03,637 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993027026999474 that doesn't match if-match: 15992991051758305
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 06:30:00,014 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Result Config
+2020-09-05 06:30:00,014 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-1] Reloading AMQP Result Config
+2020-09-05 06:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-1] Reloading AMQP Config
+2020-09-05 06:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Config
+2020-09-05 06:30:02,494 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] Lock Service:: Document /batch/locks/file-export.json updated to locked status.
+2020-09-05 06:30:02,521 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] File Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 06:30:02,529 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[6], "options":["lang=en"]}}]}}
+2020-09-05 06:30:03,370 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993054024956014 that doesn't match if-match: 15993018210654741
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 06:30:04,006 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Job id-->fd28fa79-9e51-40ba-acbe-eed884b37297File Export Data Movement Job Started
+2020-09-05 06:30:21,649 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] UnLock Service:: Document /batch/locks/file-export.json updated to Available status.
+2020-09-05 06:30:21,687 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] File Export Data Movement Job --> fd28fa79-9e51-40ba-acbe-eed884b37297 Ended in 21 seconds
+2020-09-05 06:30:21,687 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Job id-->fd28fa79-9e51-40ba-acbe-eed884b37297. File Export Data Movement Job Failed Batch Count:0
+2020-09-05 06:45:00,014 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Result Config
+2020-09-05 06:45:00,015 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Config
+2020-09-05 06:45:03,067 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993063024376185 that doesn't match if-match: 15993027065538655
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 07:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Result Config
+2020-09-05 07:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Config
+2020-09-05 07:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Result Config
+2020-09-05 07:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Config
+2020-09-05 07:30:04,149 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993090031889363 that doesn't match if-match: 15993054216498887
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 07:30:04,150 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993090031888043 that doesn't match if-match: 15993054215922409
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 07:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Result Config
+2020-09-05 07:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Config
+2020-09-05 07:45:05,217 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993099041909697 that doesn't match if-match: 15993063051746095
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 08:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Result Config
+2020-09-05 08:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Result Config
+2020-09-05 08:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Config
+2020-09-05 08:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Config
+2020-09-05 08:30:04,165 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993126032903226 that doesn't match if-match: 15993090154025038
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 08:30:04,165 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993126032904666 that doesn't match if-match: 15993090154700915
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 08:45:00,014 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Result Config
+2020-09-05 08:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Config
+2020-09-05 08:45:02,922 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] Lock Service:: Document /batch/locks/delete.json updated to locked status.
+2020-09-05 08:45:02,951 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Batch Delete Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 08:45:02,962 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[8], "options":["lang=en"]}}]}}
+2020-09-05 08:45:05,131 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Job id-->2e7d0bdd-1813-42ec-bc9d-537e157ea3feDelete Data Movement Job Started
+2020-09-05 08:45:06,996 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] UnLock Service:: Document /batch/locks/delete.json updated to Available status.
+2020-09-05 08:45:07,022 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Delete Data Movement Job --> 2e7d0bdd-1813-42ec-bc9d-537e157ea3fe Ended in 6 seconds
+2020-09-05 08:45:07,022 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Job id-->2e7d0bdd-1813-42ec-bc9d-537e157ea3fe. Delete Data Movement Job Failed Batch Count:0
+2020-09-05 09:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Result Config
+2020-09-05 09:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Config
+2020-09-05 09:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 09:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 09:30:03,165 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993162025408345 that doesn't match if-match: 15993126170377548
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 09:30:03,166 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993162025409295 that doesn't match if-match: 15993126169834825
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 09:45:00,018 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Reloading Delete Result Config
+2020-09-05 09:45:00,019 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Reloading Delete Config
+2020-09-05 09:45:05,276 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] Lock Service:: Document /batch/locks/delete.json updated to locked status.
+2020-09-05 09:45:05,323 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Batch Delete Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 09:45:05,331 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[9], "options":["lang=en"]}}]}}
+2020-09-05 09:45:07,134 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Job id-->4542728a-2c4c-46af-a09c-91366be7a9caDelete Data Movement Job Started
+2020-09-05 09:45:10,602 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993171098645872 that doesn't match if-match: 15993171052759568
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.unLockService(LockProvider.java:136)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:275)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 10:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Result Config
+2020-09-05 10:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Config
+2020-09-05 10:30:00,019 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Result Config
+2020-09-05 10:30:00,020 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Config
+2020-09-05 10:30:02,796 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] Lock Service:: Document /batch/locks/file-export.json updated to locked status.
+2020-09-05 10:30:02,835 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] File Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 10:30:02,843 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[10], "options":["lang=en"]}}]}}
+2020-09-05 10:30:03,683 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993198027967239 that doesn't match if-match: 15993162146859443
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 10:30:04,004 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Job id-->9637f290-6fbd-4f90-a801-ee296b1de49cFile Export Data Movement Job Started
+2020-09-05 10:30:04,156 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] UnLock Service:: Document /batch/locks/file-export.json updated to Available status.
+2020-09-05 10:30:04,182 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] File Export Data Movement Job --> 9637f290-6fbd-4f90-a801-ee296b1de49c Ended in 3 seconds
+2020-09-05 10:30:04,182 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Job id-->9637f290-6fbd-4f90-a801-ee296b1de49c. File Export Data Movement Job Failed Batch Count:0
+2020-09-05 10:45:00,018 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-3] Reloading Delete Result Config
+2020-09-05 10:45:00,019 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-3] Reloading Delete Config
+2020-09-05 10:45:03,166 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993207024963147 that doesn't match if-match: 15993171099236266
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 11:30:00,013 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 11:30:00,013 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 11:30:00,014 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Result Config
+2020-09-05 11:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Config
+2020-09-05 11:30:02,794 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-1] Lock Service:: Document /batch/locks/file-export.json updated to locked status.
+2020-09-05 11:30:02,825 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] File Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 11:30:02,832 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[11], "options":["lang=en"]}}]}}
+2020-09-05 11:30:03,491 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993234027947439 that doesn't match if-match: 15993198040782261
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 11:30:03,697 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Job id-->6e3e1486-a810-45e0-9801-a860b0a46805File Export Data Movement Job Started
+2020-09-05 11:30:03,754 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-1] UnLock Service:: Document /batch/locks/file-export.json updated to Available status.
+2020-09-05 11:30:03,783 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] File Export Data Movement Job --> 6e3e1486-a810-45e0-9801-a860b0a46805 Ended in 3 seconds
+2020-09-05 11:30:03,783 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Job id-->6e3e1486-a810-45e0-9801-a860b0a46805. File Export Data Movement Job Failed Batch Count:0
+2020-09-05 11:45:00,014 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Result Config
+2020-09-05 11:45:00,014 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-4] Reloading Delete Config
+2020-09-05 11:45:03,112 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-4] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993243025204460 that doesn't match if-match: 15993207024963147
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 12:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-2] Reloading AMQP Result Config
+2020-09-05 12:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-2] Reloading AMQP Config
+2020-09-05 12:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Reloading File Result Config
+2020-09-05 12:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Reloading File Config
+2020-09-05 12:30:02,541 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] Lock Service:: Document /batch/locks/file-export.json updated to locked status.
+2020-09-05 12:30:02,571 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] File Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 12:30:02,577 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[12], "options":["lang=en"]}}]}}
+2020-09-05 12:30:03,211 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993270025407428 that doesn't match if-match: 15993234038017233
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 12:30:03,581 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Job id-->e7843a67-a036-425f-b292-ee057af1d256File Export Data Movement Job Started
+2020-09-05 12:30:03,661 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-3] UnLock Service:: Document /batch/locks/file-export.json updated to Available status.
+2020-09-05 12:30:03,698 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] File Export Data Movement Job --> e7843a67-a036-425f-b292-ee057af1d256 Ended in 3 seconds
+2020-09-05 12:30:03,698 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-3] Job id-->e7843a67-a036-425f-b292-ee057af1d256. File Export Data Movement Job Failed Batch Count:0
+2020-09-05 12:45:00,021 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Reloading Delete Result Config
+2020-09-05 12:45:00,022 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-5] Reloading Delete Config
+2020-09-05 12:45:03,345 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993279026303073 that doesn't match if-match: 15993243025204460
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 13:30:00,024 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 13:30:00,024 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 13:30:00,026 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Result Config
+2020-09-05 13:30:00,026 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Config
+2020-09-05 13:30:03,627 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-4] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 13:30:03,671 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 13:30:03,683 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[13], "options":["lang=en"]}}]}}
+2020-09-05 13:30:04,600 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993306036137093 that doesn't match if-match: 15993270036611431
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 13:30:04,856 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Job id-->3a2b9f6d-8b87-4ac3-aba7-39d57eeed53bAMQP Export Data Movement Job Started
+2020-09-05 13:30:04,992 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-4] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 13:30:05,026 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] AMQP Export Data Movement Job --> 3a2b9f6d-8b87-4ac3-aba7-39d57eeed53b Ended in 4 seconds
+2020-09-05 13:30:05,026 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Job id-->3a2b9f6d-8b87-4ac3-aba7-39d57eeed53b. AMQP Export Data Movement Job Failed Batch Count:349071
+2020-09-05 13:45:00,023 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Result Config
+2020-09-05 13:45:00,023 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Reloading Delete Config
+2020-09-05 13:45:02,788 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] Lock Service:: Document /batch/locks/delete.json updated to locked status.
+2020-09-05 13:45:02,820 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Batch Delete Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 13:45:02,829 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[13], "options":["lang=en"]}}]}}
+2020-09-05 13:45:04,084 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-2] Job id-->06984f6c-810f-4012-a0c8-8f8d343b0ddbDelete Data Movement Job Started
+2020-09-05 13:45:04,090 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-2] Unexpected error occurred in scheduled task
+java.lang.NullPointerException: null
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:263)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 14:30:00,017 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Result Config
+2020-09-05 14:30:00,017 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Result Config
+2020-09-05 14:30:00,018 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-3] Reloading AMQP Config
+2020-09-05 14:30:00,018 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-5] Reloading File Config
+2020-09-05 14:30:03,282 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/amqp-export.json has current version 15993342025760158 that doesn't match if-match: 15993306049927787
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.AMQPExportProcessor.processAMQPExport(AMQPExportProcessor.java:152)
+	at jdk.internal.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 14:30:03,283 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-5] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993342025801034 that doesn't match if-match: 15993306050010275
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 14:45:00,016 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Result Config
+2020-09-05 14:45:00,017 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-1] Reloading Delete Config
+2020-09-05 14:45:03,002 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993351024563677 that doesn't match if-match: 15993315027891004
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 15:30:00,014 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Result Config
+2020-09-05 15:30:00,015 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Result Config
+2020-09-05 15:30:00,016 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Reloading File Config
+2020-09-05 15:30:00,016 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Reloading AMQP Config
+2020-09-05 15:30:02,676 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-4] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 15:30:02,676 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] Lock Service:: Document /batch/locks/file-export.json updated to locked status.
+2020-09-05 15:30:02,705 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] File Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 15:30:02,706 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 15:30:02,711 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[15], "options":["lang=en"]}}]}}
+2020-09-05 15:30:02,714 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[15], "options":["lang=en"]}}]}}
+2020-09-05 15:30:03,742 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Job id-->17f0e6c8-b747-4495-8aed-974f179355d6AMQP Export Data Movement Job Started
+2020-09-05 15:30:03,742 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Job id-->16411281-5edd-4242-a4dc-2c0cf318b61aFile Export Data Movement Job Started
+2020-09-05 15:30:03,806 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-2] UnLock Service:: Document /batch/locks/file-export.json updated to Available status.
+2020-09-05 15:30:03,834 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] File Export Data Movement Job --> 16411281-5edd-4242-a4dc-2c0cf318b61a Ended in 3 seconds
+2020-09-05 15:30:03,834 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-2] Job id-->16411281-5edd-4242-a4dc-2c0cf318b61a. File Export Data Movement Job Failed Batch Count:0
+2020-09-05 15:30:03,858 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-4] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 15:30:03,884 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] AMQP Export Data Movement Job --> 17f0e6c8-b747-4495-8aed-974f179355d6 Ended in 3 seconds
+2020-09-05 15:30:03,884 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-4] Job id-->17f0e6c8-b747-4495-8aed-974f179355d6. AMQP Export Data Movement Job Failed Batch Count:349071
+2020-09-05 15:45:00,013 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-3] Reloading Delete Result Config
+2020-09-05 15:45:00,013 WARN com.marklogic.batch.delete.processor.DeleteProcessor [markLogicBatchJobThread-3] Reloading Delete Config
+2020-09-05 15:45:03,363 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-3] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/delete.json has current version 15993387025671533 that doesn't match if-match: 15993351024563677
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.delete.processor.DeleteProcessor.processBatchDelete(DeleteProcessor.java:219)
+	at jdk.internal.reflect.GeneratedMethodAccessor108.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 16:30:00,013 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Result Config
+2020-09-05 16:30:00,014 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Reloading AMQP Config
+2020-09-05 16:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Result Config
+2020-09-05 16:30:00,015 WARN com.marklogic.batch.export.processor.FileExportProcessor [markLogicBatchJobThread-1] Reloading File Config
+2020-09-05 16:30:02,464 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] Lock Service:: Document /batch/locks/amqp-export.json updated to locked status.
+2020-09-05 16:30:02,488 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] AMQP Export Query::cts.andQuery([cts.collectionQuery("test"),cts.jsonPropertyValueQuery("month",fn.hoursFromTime(fn.currentTime()))])
+2020-09-05 16:30:02,491 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Serialized Query::{"andQuery":{"queries":[{"collectionQuery":{"uris":["test"]}}, {"jsonPropertyValueQuery":{"property":["month"], "value":[16], "options":["lang=en"]}}]}}
+2020-09-05 16:30:03,104 ERROR org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler [markLogicBatchJobThread-1] Unexpected error occurred in scheduled task
+com.marklogic.client.FailedRequestException: Local message: Content version must match to write document. Server Message: RESTAPI-CONTENTWRONGVERSION: (err:FOER0000) Content version mismatch:  uri /batch/locks/file-export.json has current version 15993414024623550 that doesn't match if-match: 15993378038068708
+	at com.marklogic.client.impl.OkHttpServices.putPostDocumentImpl(OkHttpServices.java:1542)
+	at com.marklogic.client.impl.OkHttpServices.putDocument(OkHttpServices.java:1351)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:940)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:888)
+	at com.marklogic.client.impl.DocumentManagerImpl.write(DocumentManagerImpl.java:812)
+	at com.marklogic.batch.lock.LockProvider.lockService(LockProvider.java:76)
+	at com.marklogic.batch.export.processor.FileExportProcessor.processFileExport(FileExportProcessor.java:142)
+	at jdk.internal.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-09-05 16:30:03,363 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Job id-->5d03043d-4d24-4125-8388-9f605673c012AMQP Export Data Movement Job Started
+2020-09-05 16:30:03,422 WARN com.marklogic.batch.utils.ConnectionUtils [markLogicBatchJobThread-5] UnLock Service:: Document /batch/locks/amqp-export.json updated to Available status.
+2020-09-05 16:30:03,450 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] AMQP Export Data Movement Job --> 5d03043d-4d24-4125-8388-9f605673c012 Ended in 3 seconds
+2020-09-05 16:30:03,450 WARN com.marklogic.batch.export.processor.AMQPExportProcessor [markLogicBatchJobThread-5] Job id-->5d03043d-4d24-4125-8388-9f605673c012. AMQP Export Data Movement Job Failed Batch Count:349071

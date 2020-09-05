@@ -1,0 +1,26 @@
+                                                                                                                                                
+,--.   ,--.               ,--.    ,--.                 ,--.          ,-----.            ,--.        ,--.              ,--.       ,--.           
+|   `.'   | ,--,--.,--.--.|  |,-. |  |    ,---.  ,---. `--' ,---.    |  |) /_  ,--,--.,-'  '-. ,---.|  ,---.          |  | ,---. |  |-.  ,---.  
+|  |'.'|  |' ,-.  ||  .--'|     / |  |   | .-. || .-. |,--.| .--'    |  .-.  \' ,-.  |'-.  .-'| .--'|  .-.  |    ,--. |  || .-. || .-. '(  .-'  
+|  |   |  |\ '-'  ||  |   |  \  \ |  '--.' '-' '' '-' '|  |\ `--.    |  '--' /\ '-'  |  |  |  \ `--.|  | |  |    |  '-'  /' '-' '| `-' |.-'  `) 
+`--'   `--' `--`--'`--'   `--'`--'`-----' `---' .`-  / `--' `---'    `------'  `--`--'  `--'   `---'`--' `--'     `-----'  `---'  `---' `----'  
+                                                `---'                                                                                           
+                                                
+Application Name : ${info.app.name}
+Application Version : ${info.app.version}
+===============================================================================================================================================
+                                                                 * CAPABILITIES *
+===============================================================================================================================================
+Export to AMQP : ${static.batch.export.amqp.enabled}
+Export to Kafka : ${static.batch.export.kafka.enabled}
+Export to SQL Server : ${static.batch.export.rdbms.enabled}
+Export to File : ${static.batch.export.file.enabled}
+Batch Delete : ${static.batch.delete.enabled}
+
+- The schedule of the jobs can be checked at
+                 http://<domain>:${management.server.port}/${management.endpoints.web.base-path}/scheduledtasks
+
+- The application properties jobs can be checked at  
+                 http://<domain>:${management.server.port}/${management.endpoints.web.base-path}/env 
+
+Starting. Please wait...

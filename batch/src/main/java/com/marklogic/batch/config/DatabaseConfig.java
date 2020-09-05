@@ -17,6 +17,12 @@ public class DatabaseConfig {
 	String externalName;
 	String hostNameVerifier;
 	String mutualAuth;
+	String keystoreType;
+	String keystorePath;
+	String keystorePwd;
+	String truststoreType;
+	String truststorePath;
+	String truststorePwd;
 	
 	public String getMlHost() {
 		return mlHost;
@@ -107,6 +113,42 @@ public class DatabaseConfig {
 	}
 	public void setMutualAuth(String mutualAuth) {
 		this.mutualAuth = mutualAuth;
+	}
+	public String getKeystoreType() {
+		return keystoreType;
+	}
+	public void setKeystoreType(String keystoreType) {
+		this.keystoreType = keystoreType;
+	}
+	public String getKeystorePath() {
+		return keystorePath;
+	}
+	public void setKeystorePath(String keystorePath) {
+		this.keystorePath = keystorePath;
+	}
+	public String getKeystorePwd() {
+		return keystorePwd;
+	}
+	public void setKeystorePwd(String keystorePwd) {
+		this.keystorePwd = keystorePwd;
+	}
+	public String getTruststoreType() {
+		return truststoreType;
+	}
+	public void setTruststoreType(String truststoreType) {
+		this.truststoreType = truststoreType;
+	}
+	public String getTruststorePath() {
+		return truststorePath;
+	}
+	public void setTruststorePath(String truststorePath) {
+		this.truststorePath = truststorePath;
+	}
+	public String getTruststorePwd() {
+		return truststorePwd;
+	}
+	public void setTruststorePwd(String truststorePwd) {
+		this.truststorePwd = truststorePwd;
 	}
 	
 
